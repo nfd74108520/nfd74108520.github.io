@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon</title>
+  </head>
+
+  <body>
+    <h1>寶可夢圖鑑列表</h1>
+    <button onclick="fetchPokemon()">載入寶可夢圖鑑列表-attr屬性方法</button>
+    <button id="btn">載入寶可夢圖鑑列表-js設定事件方法</button>
+    <button id="btn2">載入寶可夢圖鑑列表-addEve新增事件方法</button>
+    <button id="addone" onclick="addPokemon()">點擊 載入一張</button>
+    <button id="removeone" onclick="removeImg()">點擊 刪除一張</button>
+    <button id="timer">計時間隔載入</button>
+    <button id="stop" onclick="clearTime()">停止計時間隔載入</button>
+    <button onclick="fetchPokemon_clear()">清除寶可夢圖鑑列表</button>
+
+    <div id="container"></div>
+
+    <script src="./pokemon.js"></script>
+  </body>
+</html>
