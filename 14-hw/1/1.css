@@ -1,0 +1,25 @@
+.container-fluid{
+    background-color: #2b3238;
+    color: #fff;
+    /* height: 90vh; */
+}
+
+.bg-custom{
+    background-color: #2b3238;
+}
+
+.container-fluid .row:first-child p{
+    color: #1a81fd;
+}
+.row input::-webkit-input-placeholder,
+.row textarea::-webkit-input-placeholder
+{
+   color:white;
+}
+
+.row input,
+.row textarea
+{
+   outline: none;
+   /* border: 0; */
+}
