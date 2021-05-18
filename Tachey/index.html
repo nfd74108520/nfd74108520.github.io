@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tachey</title>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./tachey.css" />
+  </head>
+  <body class="bg-gray">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div
+          class="col-7 my-5 d-flex justify-content-between p-0"
+          id="step-progress"
+        >
+          <div class="progress position-absolute bg-hahow-orange">
+            <div
+              class="progress-bar bg-hahow-orange"
+              role="progressbar"
+              style="width: 0%"
+              id="progress-bar"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+          <button
+            type="button"
+            class="btn bg-hahow-green btn-circle"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="開始"
+          >
+            0
+          </button>
+          <button
+            type="button"
+            class="btn bg-hahow-orange btn-circle"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="課程標題"
+          >
+            1
+          </button>
+          <button
+            type="button"
+            class="btn bg-hahow-orange btn-circle"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="課程目標"
+          >
+            2
+          </button>
+          <button
+            type="button"
+            class="btn bg-hahow-orange btn-circle"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="預計單元"
+          >
+            3
+          </button>
+          <button
+            type="button"
+            class="btn bg-hahow-orange btn-circle"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="募資條件"
+          >
+            4
+          </button>
+          <button
+            type="button"
+            class="btn bg-hahow-orange btn-circle"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="詳細內容"
+          >
+            5
+          </button>
+          <button
+            type="button"
+            class="btn bg-hahow-orange btn-circle"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="影片上傳"
+          >
+            6
+          </button>
+          <button
+            type="button"
+            class="btn bg-hahow-orange btn-circle"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="課程網址"
+          >
+            7
+          </button>
+          <button
+            type="button"
+            class="btn bg-hahow-orange btn-circle"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="開課分身"
+          >
+            8
+          </button>
+          <button
+            type="button"
+            class="btn bg-hahow-orange btn-circle"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="準備募資"
+          >
+            9
+          </button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 text-center text-mc">
+          <h1 id="titleContentH1">歡迎加入 Tachey 好老師的行列</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center m-2">
+        <div class="col-12 text-center text-mc text-secondary">
+          <h4 id="titleContentH4">跟著 Tachey 一步一步完成募資提案吧！</h4>
+        </div>
+      </div>
+      <div
+        class="row justify-content-center bg-white mb-5"
+        id="contentHTML"
+      ></div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./tachey.js"></script>
+  </body>
+</html>

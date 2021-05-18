@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.hahow-orange {
+  color: #fa8b00;
+}
+
+.hahow-dark-orange {
+  color: rgb(238, 100, 87);
+}
+
+.bg-hahow-green {
+  background: rgb(46, 225, 179);
+  color: white;
+}
+
+.bg-hahow-green:hover {
+  color: white;
+}
+
+.bg-hahow-dark-orange {
+  background: rgb(250, 139, 0);
+}
+
+.center {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.card-bottom {
+  width: 100%;
+  height: 6px;
+}
+
+.backgroundPhoto {
+  width: 58px;
+  height: 58px;
+  transform: translate(10%, -50%);
+  z-index: 1;
+}
+
+.backgroundTape {
+  font-size: 14px;
+  width: 50%;
+  height: 25px;
+  line-height: 25px;
+  right: -15%;
+  top: 20px;
+  transform: rotate(45deg);
+}
+
+.backgroundBookmark {
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  bottom: -50%;
+  left: 5%;
+  transition: 0.5s;
+}
+
+#photoImag {
+  width: 55px;
+  height: 55px;
+}
+
+.h-30 {
+  height: 10px;
+}
+
+.line-height-40 {
+  line-height: 40px;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card:hover .backgroundBookmark {
+  bottom: 5%;
+}
+
+.card-img-top {
+  transition: 0.5s;
+}
+
+.fa-bookmark {
+  transform: scale(1.2);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.2);
+}
+
+.backgroundBookmark:hover {
+  background-color: #fa8b00;
+}
+
+.backgroundBookmark:hover i {
+  color: white;
+}
