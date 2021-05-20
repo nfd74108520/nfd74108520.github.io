@@ -60,7 +60,7 @@ xhr.onload = function () {
     contentHTML.innerHTML = xhr.responseText;
   }
 };
-xhr.open("GET", `./contentHTML/index8.html`, true);
+xhr.open("GET", `./contentHTML/index0.html`, true);
 xhr.send(null);
 
 stepProgressArray.forEach((item) => {
