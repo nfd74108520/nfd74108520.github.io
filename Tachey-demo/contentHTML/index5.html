@@ -24,7 +24,7 @@
                         <option>講師作品</option>
                         <option>回覆與作業設計</option>
                       </select>
-                      <button type="button" class="btn btn-white" data-toggle="tooltip" data-placement="right" title="插入我們建議的章節段落與段落編輯說明，方便你製作符合提案審核標準的課程介紹。">
+                      <button type="button" id="example" class="btn btn-white" data-toggle="tooltip" data-placement="right" title="插入我們建議的章節段落與段落編輯說明，方便你製作符合提案審核標準的課程介紹。">
                         <span class="bg-dark d-block rounded-circle font-weight-bold btn-sm-circle text-white text-center line-height-20">?</span>
                       </button>
                     </div>
@@ -80,10 +80,10 @@
       </div>
     </div>
 
-
-
     <script>
-        $('#example').tooltip({ boundary: 'window' })
+        $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
     </script>
   </body>
 </html>

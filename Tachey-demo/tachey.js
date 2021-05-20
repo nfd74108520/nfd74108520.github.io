@@ -50,17 +50,17 @@ let stepProgress = document
   .getElementsByTagName("button");
 
 let progressBar = document.getElementById("progress-bar");
+let contentHTML = document.getElementById("contentHTML");
 
 let stepProgressArray = Array.from(stepProgress);
 
 let xhr = new XMLHttpRequest();
 xhr.onload = function () {
   if (xhr.status === 200) {
-    let contentHTML = document.getElementById("contentHTML");
     contentHTML.innerHTML = xhr.responseText;
   }
 };
-xhr.open("GET", `./contentHTML/index0.html`, true);
+xhr.open("GET", `./contentHTML/index8.html`, true);
 xhr.send(null);
 
 stepProgressArray.forEach((item) => {
@@ -88,10 +88,29 @@ function changeStep() {
   let xhr = new XMLHttpRequest();
   xhr.onload = function () {
     if (xhr.status === 200) {
-      let contentHTML = document.getElementById("contentHTML");
       contentHTML.innerHTML = xhr.responseText;
+
+      indexEightFun();
     }
   };
   xhr.open("GET", `./contentHTML/index${num}.html`, true);
   xhr.send(null);
+}
+
+function indexEightFun() {
+  let check = document.querySelectorAll(".form-check-input");
+
+  check.forEach((item) => {
+    item.addEventListener("click", () => {
+      for (let i = 1; i < 4; i++) {
+        let img = document.getElementById(`${i}`);
+        if (i == item.value) {
+          img.src =
+            "https://hahow.in/static/media/square-check-secondary.c2a8bbe3.svg";
+        } else {
+          img.src = "https://hahow.in/static/media/square.c66e09db.svg";
+        }
+      }
+    });
+  });
 }
