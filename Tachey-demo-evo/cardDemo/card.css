@@ -3,6 +3,15 @@ body {
   padding: 0;
 }
 
+.star-gray{
+  color: rgb(202, 202, 202);
+}
+
+.star-yellow{
+  color: #ffae00;
+  left: 0;
+}
+
 .hahow-orange {
   color: #fa8b00;
 }
@@ -133,7 +142,21 @@ body {
   }
 
   .classPrice {
-    font-size: 26px;
+    font-size: 25px;
+  }
+
+  .course-time::before{
+    content: "課時";
+  }
+  .couse-time-before{
+    display: none;
+  }
+
+  .course-people::before{
+    content: "同學";
+  }
+  .course-people-before{
+    display: none;
   }
 }
 
