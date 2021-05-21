@@ -11,9 +11,17 @@ body {
   color: rgb(238, 100, 87);
 }
 
+.hahow-dark-green {
+  color: rgb(0, 190, 164);
+}
+
 .bg-hahow-green {
   background: rgb(46, 225, 179);
   color: white;
+}
+
+.bg-hahow-dark-green {
+  background: rgb(0, 190, 164);
 }
 
 .bg-hahow-green:hover {
@@ -32,11 +40,6 @@ body {
   margin: auto;
 }
 
-.card-bottom {
-  width: 100%;
-  height: 6px;
-}
-
 .backgroundPhoto {
   width: 58px;
   height: 58px;
@@ -44,29 +47,24 @@ body {
   z-index: 1;
 }
 
-.backgroundTape {
-  font-size: 14px;
-  width: 50%;
-  height: 25px;
-  line-height: 25px;
-  right: -15%;
-  top: 20px;
-  transform: rotate(45deg);
-}
-
 .backgroundBookmark {
   background-color: #fff;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.backgroundBookmark-sm {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.backgroundBookmarkMove {
   bottom: -50%;
   left: 5%;
   transition: 0.5s;
-}
-
-#photoImag {
-  width: 55px;
-  height: 55px;
 }
 
 .h-30 {
@@ -77,12 +75,12 @@ body {
   line-height: 40px;
 }
 
-.card:hover {
-  cursor: pointer;
+.line-height-30 {
+  line-height: 30px;
 }
 
-.card:hover .backgroundBookmark {
-  bottom: 5%;
+.card:hover {
+  cursor: pointer;
 }
 
 .card-img-top {
@@ -93,14 +91,78 @@ body {
   transform: scale(1.2);
 }
 
-.card:hover .card-img-top {
-  transform: scale(1.2);
+@media (min-width: 769px) {
+  #photoImag {
+    width: 55px;
+    height: 55px;
+  }
+
+  .backgroundTape {
+    font-size: 14px;
+    width: 50%;
+    height: 25px;
+    line-height: 25px;
+    right: -15%;
+    top: 20px;
+    transform: rotate(45deg);
+  }
+
+  .card:hover .card-img-top {
+    transform: scale(1.2);
+  }
+
+  .card:hover .backgroundBookmarkMove {
+    bottom: 5%;
+  }
+
+  .backgroundBookmark-sm {
+    display: none !important;
+    color: white;
+  }
+
+  .backgroundBookmark:hover {
+    background-color: #fa8b00;
+  }
+
+  .backgroundBookmark:hover i {
+    color: white;
+  }
+
+  .card-bottom {
+    height: 6px;
+  }
+
+  .classPrice {
+    font-size: 26px;
+  }
 }
 
-.backgroundBookmark:hover {
-  background-color: #fa8b00;
-}
+@media (max-width: 768px) {
+  .card-title-image {
+    display: none ;
+  }
 
-.backgroundBookmark:hover i {
-  color: white;
+  .backgroundBookmark{
+    display: none;
+  }
+
+  .backgroundBookmark-sm:hover {
+    background-color: #fa8b00;
+  }
+
+  .backgroundBookmark-sm:hover i {
+    color: white;
+  }
+
+  .card-bottom {
+    height: 2px;
+  }
+
+  .card-img-top{
+    width: 90%;
+  }
+
+  .card{
+    border: 0px
+  }
 }
