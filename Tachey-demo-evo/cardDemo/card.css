@@ -100,7 +100,7 @@ body {
   transform: scale(1.2);
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   #photoImag {
     width: 55px;
     height: 55px;
@@ -160,7 +160,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .card-title-image {
     display: none ;
   }
