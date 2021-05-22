@@ -6,6 +6,9 @@ body {
   background-color: rgb(243, 243, 241);
   color: rgb(250, 139, 0);
   border: 0px solid;
+}
+
+.change-btn-checked-border{
   border-bottom: 5px solid rgb(250, 139, 0);
 }
 
