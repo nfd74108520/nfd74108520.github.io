@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+</head>
+<style>
+    /* ----導覽列------ */
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .bg-gray {
+        background-color: rgb(248, 248, 248);
+    }
+
+    .grow-0 {
+        flex-grow: 0;
+    }
+
+    #Homepage-logo {
+        width: 135px;
+        height: 33px;
+    }
+
+    #Recruit-logo {
+        width: 65px;
+        height: 43px;
+    }
+
+    #nav-space {
+        width: 200px;
+    }
+
+    #user-menu {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        /* background-color: khaki; */
+
+    }
+
+    #user-logo {
+        border-radius: 30px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .user-logo-content {
+        left: -100px
+    }
+
+    .user-notice {
+        left: -50px
+    }
+
+    /* ----導覽列------ */
+    body {
+        background-color: rgba(0, 0, 0, 0.062);
+    }
+
+    .content-1 {
+        display: flex;
+        flex-direction: column;
+        -webkit-box-align: center;
+        align-items: center;
+        margin: 0px 15px;
+    }
+
+    .cart-area {
+        /* margin-bottom: 60px; */
+        width: 55vw;
+        height: 75vh;
+    }
+
+    .main-container {
+        display: flex;
+        width: 100%;
+        max-width: 1140px;
+        min-height: 600px;
+        margin: 60px 25px;
+    }
+
+    .vertical-horizontal-center {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+
+    .pad-tb-100 {
+        padding-top: 100px;
+        /* padding-bottom: 100px; */
+    }
+
+    .marg-b-30 {
+        margin-bottom: 30px;
+    }
+
+    .marg-b-10 {
+        margin-bottom: 10px;
+    }
+
+    .fBQVEd {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid rgb(250, 139, 0);
+        white-space: nowrap;
+        user-select: none;
+        font-weight: 400;
+        background-color: rgb(250, 139, 0);
+        color: white;
+        padding: 5px 40px;
+        font-size: 20px;
+        border-radius: 3px;
+        min-width: 260px;
+        line-height: 1.8em;
+    }
+
+    .text-center {
+        text-align: center;
+        width: 260px;
+        height: 216px;
+    }
+
+    .right-area {
+        flex: 0 1 260px;
+        order: 2;
+        margin-left: 30px;
+        /* background-color: white; */
+    }
+
+    .dfcsU {
+        border-radius: 3px;
+        border: none;
+        /* text-align: center; */
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgb(0 0 0 / 12%) 0px 2px 8px 0px;
+        overflow: auto;
+    }
+
+    .pad-b-20 {
+        padding-bottom: 20px;
+    }
+
+    .marg-b-20 {
+        margin-bottom: 20px;
+    }
+
+    .pad-rl-15 {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .RmieE .border-bottom-box {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+        padding-bottom: 10px;
+        padding-top: 10px;
+        transition: border-bottom-width 0.3s ease 0s;
+    }
+
+    h6 {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    .border-bottom-box {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+        padding-bottom: 10px;
+        padding-top: 10px;
+        /* transition: border-bottom-width 0.3s ease 0s; */
+    }
+
+    .RcKEn[disabled] {
+        background-color: rgb(204, 204, 204);
+        border-color: rgb(204, 204, 204);
+        color: white;
+    }
+
+    .RcKEn[disabled] {
+        background-color: rgb(204, 204, 204);
+        border-color: rgb(204, 204, 204);
+        color: white;
+    }
+
+    .RcKEn[disabled] {
+        cursor: not-allowed;
+        opacity: 0.65;
+        box-shadow: none;
+    }
+
+    .RcKEn {
+        text-align: center;
+        /* vertical-align: middle; */
+        touch-action: manipulation;
+        /* cursor: pointer; */
+        background-image: none;
+        border: 1px solid rgb(250, 139, 0);
+        white-space: nowrap;
+        user-select: none;
+        font-weight: 400;
+        background-color: rgb(250, 139, 0);
+        color: white;
+        padding: 5px 40px;
+        font-size: 20px;
+        border-radius: 3px;
+        min-width: unset;
+        line-height: 1.8em;
+        display: block;
+        width: 100%;
+    }
+
+    .card-flex {
+        display: flex;
+    }
+
+    .paid-in-twd {
+        font-size: 14px;
+        color: rgb(250, 139, 0);
+        margin: .5rem;
+    }
+
+    .marg-t-20 {
+        margin-top: 20px;
+    }
+
+    .entry {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .total-amount h3 {
+        display: inline-block;
+        color: rgb(250, 139, 0);
+    }
+
+    /* 
+    .sticky-inner-wrapper {
+        position: fixed;
+        transform: translate3d(0px, 110px, 0px);
+        width: 260px;
+        top: 0px;
+    } */
+    .sticky-inner-wrapper {
+        position: sticky;
+        top: 60px;
+        width: 250px;
+    }
+
+    /* card */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .star-gray {
+        color: rgb(202, 202, 202);
+    }
+
+    .star-yellow {
+        color: #ffae00;
+        left: 0;
+    }
+
+    .hahow-orange {
+        color: #fa8b00;
+    }
+
+    .hahow-dark-orange {
+        color: rgb(238, 100, 87);
+    }
+
+    .hahow-dark-green {
+        color: rgb(0, 190, 164);
+    }
+
+    .bg-hahow-green {
+        background: rgb(46, 225, 179);
+        color: white;
+    }
+
+    .bg-hahow-dark-green {
+        background: rgb(0, 190, 164);
+    }
+
+    .bg-hahow-green:hover {
+        color: white;
+    }
+
+    .bg-hahow-dark-orange {
+        background: rgb(250, 139, 0);
+    }
+
+    .center {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .backgroundPhoto {
+        width: 58px;
+        height: 58px;
+        transform: translate(10%, -50%);
+        z-index: 1;
+    }
+
+    .backgroundBookmark {
+        background-color: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .backgroundBookmark-sm {
+        background-color: #fff;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+
+    .backgroundBookmarkMove {
+        bottom: -50%;
+        left: 5%;
+        transition: 0.5s;
+    }
+
+    .h-30 {
+        height: 10px;
+    }
+
+    .line-height-40 {
+        line-height: 40px;
+    }
+
+    .line-height-30 {
+        line-height: 30px;
+    }
+
+    .card:hover {
+        cursor: pointer;
+    }
+
+    .card-img-top {
+        transition: 0.5s;
+    }
+
+    .fa-bookmark {
+        transform: scale(1.2);
+    }
+
+    @media (min-width: 768px) {
+        #photoImag {
+            width: 55px;
+            height: 55px;
+        }
+
+        .backgroundTape {
+            font-size: 14px;
+            width: 50%;
+            height: 25px;
+            line-height: 25px;
+            right: -15%;
+            top: 20px;
+            transform: rotate(45deg);
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.2);
+        }
+
+        .card:hover .backgroundBookmarkMove {
+            bottom: 5%;
+        }
+
+        .backgroundBookmark-sm {
+            display: none !important;
+            color: white;
+        }
+
+        .backgroundBookmark:hover {
+            background-color: #fa8b00;
+        }
+
+        .backgroundBookmark:hover i {
+            color: white;
+        }
+
+        .card-bottom {
+            height: 6px;
+        }
+
+        .classPrice {
+            font-size: 25px;
+        }
+
+        .course-time::before {
+            content: "課時";
+        }
+
+        .couse-time-before {
+            display: none;
+        }
+
+        .course-people::before {
+            content: "同學";
+        }
+
+        .course-people-before {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .card-title-image {
+            display: none;
+        }
+
+        .backgroundBookmark {
+            display: none;
+        }
+
+        .backgroundBookmark-sm:hover {
+            background-color: #fa8b00;
+        }
+
+        .backgroundBookmark-sm:hover i {
+            color: white;
+        }
+
+        .card-bottom {
+            height: 2px;
+        }
+
+        .card-img-top {
+            width: 90%;
+        }
+
+        .card {
+            border: 0px
+        }
+    }
+
+    /* card */
+    /* 頁尾 */
+    .footer {
+
+        padding: 50px;
+        background-color: rgba(0, 0, 0, 6.5%);
+
+    }
+
+    .footer-block {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .footer-h3 {
+        font-size: 16px;
+        color: #00bea4;
+    }
+
+    .footer-content {
+        font-size: 12px;
+        text-decoration: none;
+        color: #000000;
+    }
+
+    .footer-btn {
+        width: 100%;
+        text-align: start;
+        background-color: white;
+        color: #000000;
+    }
+
+    #footer-space {
+        width: 130px;
+        display: inline-block;
+    }
+
+    /* 頁尾 */
+
+
+    @media (max-width: 1200px) {
+        .cart-area {
+            width: 100%;
+        }
+
+        .cart-area {
+            /* margin-bottom: 60px; */
+            width: 55vw;
+            height: 75vh;
+        }
+
+        .sticky-inner-wrapper {
+        position: sticky;
+        top: 60px;
+        width: 250px;
+    }
+    }
+
+
+    @media (max-width: 768px) {
+        .cart-area {
+            /* margin-bottom: 60px; */
+            width: 90vw;
+            height: 75vh;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .sticky-inner-wrapper {
+            /* position: absolute; */
+            /* transform: translate3d(0px, 110px, 0px); */
+            margin-top: .5rem;
+            position: static;
+            width: 100%;
+            top: 0px;
+        }
+
+        .left-area {
+            display: flex;
+        }
+
+        .right-area {
+            flex: 0 1 260px;
+            order: 2;
+            margin-left: 0;
+            /* background-color: white; */
+        }
+
+        .pad-tb-100 {
+            padding-top: 100px;
+            /* padding-bottom: 100px; */
+        }
+
+        .bookmark-area {
+            display: none;
+        }
+    }
+</style>
+
+<body>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <div class="nav-log-wrap">
+            <a href="#"><img id="Homepage-logo" src="https://hahow.in/static/media/logo-black.59fdbe30.svg" alt=""></a>
+            <a href="#"><img id="Recruit-logo" src="https://hahow.in/static/images/joinus/2018hiring.svg" alt=""></a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- 下拉選單有2層 -->
+        <div class="collapse navbar-collapse  grow-0" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-th-large"></i>
+                        探索課程
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropright">
+                            <a class="dropdown-item dropdown-toggle" href="#!" data-toggle="dropdown">
+                                C#
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">
+                                    Posts
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Groups
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Projects
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Files
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Subscribers
+                                </a>
+                            </div>
+                        </li>
+                        <li class="dropright">
+                            <a class="dropdown-item dropdown-toggle" href="#!" data-toggle="dropdown">
+                                CSS
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">
+                                    Posts
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Groups
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Projects
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Files
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Subscribers
+                                </a>
+                            </div>
+                        </li>
+                        <li class="dropright">
+                            <a class="dropdown-item dropdown-toggle" href="#!" data-toggle="dropdown">
+                                Javascript
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">
+                                    Posts
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Groups
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Projects
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Files
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Subscribers
+                                </a>
+                            </div>
+                        </li>
+                        <li class="dropright">
+                            <a class="dropdown-item dropdown-toggle" href="#!" data-toggle="dropdown">
+                                Mvc
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">
+                                    Posts
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Groups
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Projects
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Files
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Subscribers
+                                </a>
+                            </div>
+                        </li>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </ul>
+                </li>
+                <!-- 沒有下拉選單 -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-pencil-alt"></i>我要開課</a>
+                </li>
+            </ul>
+            <!-- 搜尋列 -->
+            <form class="form-inline my-2 my-lg-0 ">
+                <i class="fas fa-search px-2"></i>
+                <input class="form-control mr-sm-2" type="search" placeholder="課程搜尋" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+        <!-- 移動距離就創一個空的div -->
+        <!-- <div id="nav-space"></div> -->
+        <!-- <div id="nav-space"></div> -->
+
+        <div class="collapse navbar-collapse  grow-0" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">我的課程</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        123 <br> 123 <br> 123 <br>123 <br>123 <br>123 <br>123 <br>123 <br>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="far fa-bell"></i>
+                    </a>
+                    <div class="dropdown-menu user-notice" aria-labelledby="navbarDropdown">
+                        123 <br> 123 <br> 123 <br>123 <br>123 <br>123 <br>123 <br>123 <br>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
+                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div id="user-menu"><img src="me.jpg" alt="" id="user-logo"></div>
+                    </a>
+                    <div class="dropdown-menu user-logo-content" aria-labelledby="navbarDropdown">
+                        123 <br> 123 <br> 123 <br>123 <br>123 <br>123 <br>123 <br>123 <br>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 導覽列 -->
+    <main class="content container-fluid">
+
+        <div class="content-1">
+            <div class="main-container">
+                <!-- 右邊 -->
+                <div class="right-area">
+                    <div class="sticky-outer-wrapper active" style="height: 100%;">
+                        <div class="sticky-inner-wrapper ">
+                            <div class="sc-1t3czdh-0 dfcsU pad-rl-15 pad-b-20 marg-b-20">
+                                <div class="sc-1t3czdh-2  gjCOGK">
+                                    <div class="border-bottom-box">
+                                        <h6><b>訂單明細</b></h6>
+
+                                    </div>
+                                    <!-- 小記>約0 -->
+                                    <div class="border-bottom-box">
+                                        <div class="entry sub-total"><span class="title">小計</span><span
+                                                class="ntd">NT$0</span></div>
+                                        <div class="paid-in-twd">
+                                            <div class="text-right">本交易將以台幣支付&nbsp;<span data-tip="true"
+                                                    data-for="paid-in-twd-tip" aria-hidden="true"
+                                                    class="fa fa-question-circle" currentitem="false"></span></div>
+                                        </div>
+
+                                        <div class="total-amount text-right">
+                                            <h3 class="marg-tb-0">NT$0</h3>
+                                        </div>
+                                        <div class="approximate-total text-right">約 NT$0</div>
+                                    </div>
+                                    <button class="sc-1a6j6ze-0 RcKEn marg-t-20" disabled="">來去結帳</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 左邊~ -->
+                <div class="left-area">
+                    <div class="cart-area marg-b-60">
+                        <h4 class="underline flex align-items-center justify-space-between m-3">
+                            <span><span aria-hidden="true" class="fa fa-shopping-cart"></span>
+                                <spanclass="marg-l-10">購物車</spanclass=>
+                            </span>
+                        </h4>
+                        <hr>
+                        <div class="pt-6rem">
+                            <div class="vertical-horizontal-center pad-tb-100">
+                                <div class="text-center"><img alt="Empty shopping cart" class="marg-b-10"
+                                        src="https://hahow.in/static/media/empty-box.e2bf3c3b.svg" style="width: auto;">
+                                    <div class="marg-b-10">購物車是空的，來去逛逛？</div><a href="#">
+                                        <button class="sc-1a6j6ze-0 fBQVEd">探索課程</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 我收藏的課程 -->
+                    <div class="bookmark-area marg-t-60 hidden-xs">
+                        <h4 class="underline m-3"><span aria-hidden="true" class="fa fa-bookmark"></span>
+                            <span class="marg-l-10">我收藏的課</span>
+                        </h4>
+                        <hr>
+                        <!-- <div class="pt-6rem card-flex"> -->
+                        <!-- 課程卡 -->
+                        <div class="container-md">
+                            <div class="row">
+                                <!-- 課程卡 -->
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-0">
+                                    <div class="card my-5">
+                                        <div class="row no-gutters justify-content-center">
+                                            <div class="col-12">
+                                                <div class="card-title-image position-relative">
+                                                    <div class="
+                                                backgroundPhoto
+                                                position-absolute
+                                                rounded-circle
+                                                bg-white
+                                              ">
+                                                        <img src="https://0.share.photo.xuite.net/donna900920/104fe81/12711717/639651164_m.jpg"
+                                                            alt="" class="rounded-circle position-absolute center"
+                                                            id="photoImag" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col-xl-12 col-lg-12 col-md-12 col-sm-2 col-2 overflow-hidden mb-2">
+                                                <img src="https://images.api.hahow.in/images/5f4c73b1dccd653e568b9b9d?width=300"
+                                                    class="card-img-top" />
+                                                <div class="
+                                            position-absolute
+                                            bg-hahow-dark-green
+                                            text-center text-white
+                                            backgroundTape
+                                          ">
+                                                    上課囉
+                                                </div>
+                                                <div
+                                                    class="backgroundBookmark backgroundBookmarkMove position-absolute text-center">
+                                                    <i class="far fa-bookmark hahow-orange line-height-40"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
+                                                <h4 class="card-title text-justify font-weight-normal text-secondary">
+                                                    Java 工程師必備！Spring Boot 零基
+                                                </h4>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-3 col-6 mb-2">
+                                                <span class="card-text text-black-50">
+                                                    <span class="star-show">
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                    </span>
+                                                    (6)
+                                                </span>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-2 col-6 mb-2">
+                                                <span class="card-text text-black-50">
+                                                    <span class="couse-time-before">
+                                                        <i class="far fa-clock"></i>
+                                                    </span>
+                                                    <span class="course-time">578</span>分鐘
+                                                </span>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-4 col-6 mb-2">
+                                                <span class="card-text text-black-50 mr-4">
+                                                    <span class="course-people-before">
+                                                        <i class="far fa-clock"></i>
+                                                    </span>
+                                                    <span class="course-people">260</span>人
+                                                </span>
+                                                <span class="card-text hahow-dark-green classPrice">
+                                                    NT$<span>3,200</span>
+                                                </span>
+                                            </div>
+                                            <div class="col-xl-0 col-lg-0 col-md-0 col-sm-3 col-6 mb-2 text-right">
+                                                <span class="backgroundBookmark-sm d-inline-block text-center mx-3">
+                                                    <i class="far fa-bookmark hahow-orange line-height-30"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="card-bottom bg-hahow-dark-green"></div>
+                                    </div>
+                                </div>
+                                <!-- 課程卡 -->
+
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-0 ml-4">
+                                    <div class="card my-5">
+                                        <div class="row no-gutters justify-content-center">
+                                            <div class="col-12">
+                                                <div class="card-title-image position-relative">
+                                                    <div class="
+                                                backgroundPhoto
+                                                position-absolute
+                                                rounded-circle
+                                                bg-white
+                                              ">
+                                                        <img src="https://0.share.photo.xuite.net/donna900920/104fe81/12711717/639651164_m.jpg"
+                                                            alt="" class="rounded-circle position-absolute center"
+                                                            id="photoImag" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col-xl-12 col-lg-12 col-md-12 col-sm-2 col-2 overflow-hidden mb-2">
+                                                <img src="https://images.api.hahow.in/images/5f4c73b1dccd653e568b9b9d?width=300"
+                                                    class="card-img-top" />
+                                                <div class="
+                                            position-absolute
+                                            bg-hahow-dark-green
+                                            text-center text-white
+                                            backgroundTape
+                                          ">
+                                                    上課囉
+                                                </div>
+                                                <div
+                                                    class="backgroundBookmark backgroundBookmarkMove position-absolute text-center">
+                                                    <i class="far fa-bookmark hahow-orange line-height-40"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
+                                                <h4 class="card-title text-justify font-weight-normal text-secondary">
+                                                    Java 工程師必備！Spring Boot 零基
+                                                </h4>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-3 col-6 mb-2">
+                                                <span class="card-text text-black-50">
+                                                    <span class="star-show">
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                    </span>
+                                                    (6)
+                                                </span>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-2 col-6 mb-2">
+                                                <span class="card-text text-black-50">
+                                                    <span class="couse-time-before">
+                                                        <i class="far fa-clock"></i>
+                                                    </span>
+                                                    <span class="course-time">578</span>分鐘
+                                                </span>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-4 col-6 mb-2">
+                                                <span class="card-text text-black-50 mr-4">
+                                                    <span class="course-people-before">
+                                                        <i class="far fa-clock"></i>
+                                                    </span>
+                                                    <span class="course-people">260</span>人
+                                                </span>
+                                                <span class="card-text hahow-dark-green classPrice">
+                                                    NT$<span>3,200</span>
+                                                </span>
+                                            </div>
+                                            <div class="col-xl-0 col-lg-0 col-md-0 col-sm-3 col-6 mb-2 text-right">
+                                                <span class="backgroundBookmark-sm d-inline-block text-center mx-3">
+                                                    <i class="far fa-bookmark hahow-orange line-height-30"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="card-bottom bg-hahow-dark-green"></div>
+                                    </div>
+                                </div>
+                                <!-- 課程卡 -->
+
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-0 ml-4">
+                                    <div class="card my-5">
+                                        <div class="row no-gutters justify-content-center">
+                                            <div class="col-12">
+                                                <div class="card-title-image position-relative">
+                                                    <div class="
+                                                backgroundPhoto
+                                                position-absolute
+                                                rounded-circle
+                                                bg-white
+                                              ">
+                                                        <img src="https://0.share.photo.xuite.net/donna900920/104fe81/12711717/639651164_m.jpg"
+                                                            alt="" class="rounded-circle position-absolute center"
+                                                            id="photoImag" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col-xl-12 col-lg-12 col-md-12 col-sm-2 col-2 overflow-hidden mb-2">
+                                                <img src="https://images.api.hahow.in/images/5f4c73b1dccd653e568b9b9d?width=300"
+                                                    class="card-img-top" />
+                                                <div class="
+                                            position-absolute
+                                            bg-hahow-dark-green
+                                            text-center text-white
+                                            backgroundTape
+                                          ">
+                                                    上課囉
+                                                </div>
+                                                <div
+                                                    class="backgroundBookmark backgroundBookmarkMove position-absolute text-center">
+                                                    <i class="far fa-bookmark hahow-orange line-height-40"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
+                                                <h4 class="card-title text-justify font-weight-normal text-secondary">
+                                                    Java 工程師必備！Spring Boot 零基
+                                                </h4>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-3 col-6 mb-2">
+                                                <span class="card-text text-black-50">
+                                                    <span class="star-show">
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                        <i class="fas fa-star star-gray position-relative">
+                                                            <i
+                                                                class="fas fa-star star-yellow position-absolute star-display"></i>
+                                                        </i>
+                                                    </span>
+                                                    (6)
+                                                </span>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-2 col-6 mb-2">
+                                                <span class="card-text text-black-50">
+                                                    <span class="couse-time-before">
+                                                        <i class="far fa-clock"></i>
+                                                    </span>
+                                                    <span class="course-time">578</span>分鐘
+                                                </span>
+                                            </div>
+                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-4 col-6 mb-2">
+                                                <span class="card-text text-black-50 mr-4">
+                                                    <span class="course-people-before">
+                                                        <i class="far fa-clock"></i>
+                                                    </span>
+                                                    <span class="course-people">260</span>人
+                                                </span>
+                                                <span class="card-text hahow-dark-green classPrice">
+                                                    NT$<span>3,200</span>
+                                                </span>
+                                            </div>
+                                            <div class="col-xl-0 col-lg-0 col-md-0 col-sm-3 col-6 mb-2 text-right">
+                                                <span class="backgroundBookmark-sm d-inline-block text-center mx-3">
+                                                    <i class="far fa-bookmark hahow-orange line-height-30"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="card-bottom bg-hahow-dark-green"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- 底部 -->
+    <div class="container-fuild footer">
+        <div class="row justify-content-center m-0">
+            <div class="col-lg-2 footer-block p-0">
+                <h3 class="footer-h3">關於</h3>
+                <ul>
+                    <li><a href="#" class="footer-content">關於我們</a></li>
+                    <li><a href="#" class="footer-content">加入Hahow</a></li>
+                    <li><a href="#" class="footer-content">使用者條款</a></li>
+                    <li><a href="#" class="footer-content">服務契約</a></li>
+                    <li><a href="#" class="footer-content">隱私權政策</a></li>
+                    <li><a href="#" class="footer-content">功能更新</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 footer-block p-0">
+                <h3 class="footer-h3">幫助</h3>
+                <ul>
+                    <li><a href="#" class="footer-content">企業學習方案</a></li>
+                    <li><a href="#" class="footer-content">異業合作洽談</a></li>
+                    <li><a href="#" class="footer-content">常見問題</a></li>
+                    <li><a href="#" class="footer-content">課程許願池</a></li>
+                    <li><a href="#" class="footer-content">兌換課程</a></li>
+                    <li><a href="#" class="footer-content">線上課程禮物卡</a></li>
+                    <li><a href="#" class="footer-content">填課程問卷拿優惠</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 footer-block p-0">
+                <h3 class="footer-h3">追蹤動態</h3>
+                <ul>
+                    <li><a href="#" class="footer-content">Facebook</a></li>
+                    <li><a href="#" class="footer-content">Instagram</a></li>
+                    <li><a href="#" class="footer-content">LINE</a></li>
+                    <li><a href="#" class="footer-content">YouTube</a></li>
+                    <li><a href="#" class="footer-content">Blog</a></li>
+
+                </ul>
+            </div>
+            <div class="col-lg-2 footer-block footer-last-block p-0">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle footer-btn" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>輸入地點</span>
+                        <!-- <span id="footer-space"></span> -->
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item btn-item-first" href="#">輸入地點</a>
+                        <a class="dropdown-item" href="#">TW&nbsp;台灣 &nbsp;新台幣(&nbsp;TWD&nbsp;)</a>
+                        <a class="dropdown-item" href="#">HK&nbsp;香港 &nbsp;港幣幣(&nbsp;HKD&nbsp;)</a>
+                        <a class="dropdown-item" href="#">MY&nbsp;馬來西亞 &nbsp;林吉特(&nbsp;MYR&nbsp;)</a>
+                        <a class="dropdown-item" href="#">US&nbsp;美國 &nbsp;美元(&nbsp;USD&nbsp;)</a>
+                        <a class="dropdown-item" href="#">JP&nbsp;日本 &nbsp;日圓(&nbsp;JPY&nbsp;)</a>
+                        <a class="dropdown-item" href="#">CN&nbsp;中國 &nbsp;人民幣(&nbsp;CNY&nbsp;)</a>
+                        <a class="dropdown-item" href="#">MO&nbsp;澳門 &nbsp;澳門幣(&nbsp;MOP&nbsp;)</a>
+                        <a class="dropdown-item" href="#">SG&nbsp;新加坡 &nbsp;新幣(&nbsp;SGD&nbsp;)</a>
+                        <a class="dropdown-item" href="#">AU&nbsp;澳洲 &nbsp;澳幣(&nbsp;AUD&nbsp;)</a>
+                        <a class="dropdown-item" href="#">CU&nbsp;加拿大 &nbsp;加幣(&nbsp;CAD&nbsp;)</a>
+                    </div>
+                </div>
+                <div class="dropdown mt-3">
+                    <button class="btn btn-secondary dropdown-toggle footer-btn" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>語言選擇</span>
+                        <!-- <span id="footer-space"></span> -->
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">繁體中文</a>
+                        <a class="dropdown-item" href="#">簡體中文</a>
+                    </div>
+                    <span class="pb-3 pt-2 footer-content">Hahow 好學校 © All Rights Reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script>let starCover = document.querySelectorAll(".star-show");
+
+        starCover.forEach((cover) => {
+            let star = cover.querySelectorAll(".star-display");
+            star.forEach((item, index) => {
+                if (index > 2) {
+                    item.classList.add("d-none");
+                }
+            });
+        });
+</body >
+
+</html >
